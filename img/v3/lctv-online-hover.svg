@@ -16,10 +16,22 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="lctv-offline-hover.svg"
+   sodipodi:docname="lctv-online-hover.svg"
    enable-background="new">
   <defs
      id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4220">
+      <stop
+         style="stop-color:#008000;stop-opacity:1;"
+         offset="0"
+         id="stop4222" />
+      <stop
+         style="stop-color:#008000;stop-opacity:0;"
+         offset="1"
+         id="stop4224" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient6593">
@@ -31,18 +43,6 @@
          style="stop-color:#808080;stop-opacity:0;"
          offset="1"
          id="stop6597" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient6570">
-      <stop
-         style="stop-color:#550000;stop-opacity:1;"
-         offset="0"
-         id="stop6572" />
-      <stop
-         style="stop-color:#550000;stop-opacity:0;"
-         offset="1"
-         id="stop6574" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
@@ -250,17 +250,6 @@
          in2="result2"
          mode="multiply" />
     </filter>
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient6570"
-       id="radialGradient6576"
-       cx="699.23541"
-       cy="439.90656"
-       fx="699.23541"
-       fy="439.90656"
-       r="778.55448"
-       gradientTransform="matrix(2.2808683,0.28437632,-0.10593189,0.84932047,-849.02837,-309.52433)"
-       gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient6593"
@@ -271,6 +260,17 @@
        y2="334.41211"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(-0.28879289,1.9149826)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4220"
+       id="radialGradient4226"
+       cx="907.59027"
+       cy="1342.6321"
+       fx="907.59027"
+       fy="1342.6321"
+       r="778.55448"
+       gradientTransform="matrix(2.3621697,0.25915426,-0.09691903,0.88515754,-1372.4679,-1151.0454)"
+       gradientUnits="userSpaceOnUse" />
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Brilliance"
@@ -521,6 +521,114 @@
          in2="result9"
          mode="screen" />
     </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Edge Detect"
+       id="filter4983">
+      <feConvolveMatrix
+         in="SourceGraphic"
+         kernelMatrix="0 1 0 1 -4 1 0 1 0"
+         order="3 3"
+         bias="1"
+         divisor="1"
+         targetX="1"
+         targetY="1"
+         preserveAlpha="true"
+         result="convolve"
+         id="feConvolveMatrix4985" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Edge Detect"
+       id="filter4987">
+      <feConvolveMatrix
+         in="SourceGraphic"
+         kernelMatrix="0 1 0 1 -4 1 0 1 0"
+         order="3 3"
+         bias="1"
+         divisor="1"
+         targetX="1"
+         targetY="1"
+         preserveAlpha="true"
+         result="convolve"
+         id="feConvolveMatrix4989" />
+    </filter>
+    <filter
+       inkscape:label="Neon"
+       inkscape:menu="Bevels"
+       inkscape:menu-tooltip="Neon light effect"
+       x="-0.25"
+       y="-0.25"
+       width="1.5"
+       height="1.5"
+       style="color-interpolation-filters:sRGB;"
+       id="filter10079">
+      <feGaussianBlur
+         stdDeviation="1"
+         result="result1"
+         id="feGaussianBlur10081" />
+      <feComposite
+         in="result1"
+         in2="result1"
+         result="result4"
+         operator="in"
+         id="feComposite10083" />
+      <feGaussianBlur
+         stdDeviation="7"
+         result="result6"
+         in="result4"
+         id="feGaussianBlur10085" />
+      <feComposite
+         operator="over"
+         in="result6"
+         in2="result4"
+         result="result8"
+         id="feComposite10087" />
+      <feComposite
+         operator="in"
+         result="fbSourceGraphic"
+         in="result6"
+         in2="result8"
+         id="feComposite10089" />
+      <feSpecularLighting
+         specularExponent="45"
+         specularConstant="2"
+         surfaceScale="2.5"
+         lighting-color="rgb(255,255,255)"
+         result="result1"
+         in="fbSourceGraphic"
+         id="feSpecularLighting10091">
+        <fePointLight
+           z="20000"
+           y="-10000"
+           x="-5000"
+           id="fePointLight10093" />
+      </feSpecularLighting>
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphic"
+         id="feComposite10095" />
+      <feComposite
+         k3="1.5"
+         k2="1.2"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite10097" />
+      <feComposite
+         operator="over"
+         in="result9"
+         in2="result4"
+         result="result9"
+         id="feComposite10099" />
+      <feBlend
+         mode="screen"
+         in2="result9"
+         id="feBlend10101" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -533,15 +641,15 @@
      inkscape:cx="613.92973"
      inkscape:cy="231.42294"
      inkscape:document-units="px"
-     inkscape:current-layer="g4870"
+     inkscape:current-layer="layer5"
      showgrid="false"
      width="300mm"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1280"
-     inkscape:window-height="777"
+     inkscape:window-height="772"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="2"
      inkscape:window-maximized="1"
      inkscape:snap-global="true"
      inkscape:snap-bbox="true">
@@ -587,22 +695,22 @@
        sodipodi:nodetypes="scscscccs" />
   </g>
   <g
-     inkscape:groupmode="layer"
-     id="g4252"
-     inkscape:label="inner-red-hover"
-     style="display:inline">
+     style="display:inline"
+     inkscape:label="inner-green hover"
+     id="g4382"
+     inkscape:groupmode="layer">
     <path
-       style="fill:#000000;fill-opacity:1"
+       sodipodi:nodetypes="scscscccs"
+       inkscape:connector-curvature="0"
+       id="path4384"
        d="m 1665.6604,212.71577 c 0.033,173.76866 -127.4033,173.92894 -127.4033,173.92894 0,0 -445.5017,-0.52166 -652.28892,-0.52166 -206.78721,0 -660.11319,0.47921 -660.11319,0.47921 0,0 -119.80389,1.45921 -119.57896,-173.88649 0.22292,-173.770329 105.1306,-173.097735 105.1306,-173.097735 l 674.56155,-0.309541 648.33112,0.131757 c 0,0 131.3276,0.517697 131.3611,173.275519 z"
-       id="path4254"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="scscscccs" />
+       style="fill:#000000;fill-opacity:1" />
     <path
-       transform="translate(-6.1035156e-5,0)"
-       inkscape:connector-curvature="0"
-       id="path4256"
+       style="fill:url(#radialGradient4226);fill-opacity:1;filter:url(#filter4388)"
        d="M 196.59195,379.6041 C 141.76981,360.51849 112.08824,309.68369 107.62097,227.22593 104.61325,171.70901 115.83976,119.68644 137.9676,86.602576 149.92657,68.722425 161.41386,58.538042 179.96668,49.367087 l 14.52024,-7.177582 338.13095,-1.24418 c 498.95253,-1.835936 1010.88863,-0.161379 1025.77683,3.355344 39.3047,9.284066 73.8003,39.628293 90.7029,79.787101 18.8946,44.89156 20.3103,121.30499 3.1627,170.70594 -8.5977,24.76919 -25.1661,49.13892 -43.1429,63.45688 -12.183,9.70344 -37.1644,21.71233 -51.3007,24.66097 -7.3613,1.53548 -197.7613,2.12782 -677.98788,2.10924 l -667.75201,-0.0258 -15.48486,-5.39086 z"
-       style="fill:url(#radialGradient6576);fill-opacity:1;filter:url(#filter4258)" />
+       id="path4386"
+       inkscape:connector-curvature="0"
+       transform="translate(-6.1035156e-5,0)" />
   </g>
   <g
      style="display:inline"
@@ -618,23 +726,27 @@
        style="fill:#ffffff;fill-opacity:1;filter:url(#filter4908)" />
   </g>
   <g
-     style="display:inline;opacity:1"
-     inkscape:label="Offline hover"
-     id="g4898"
-     inkscape:groupmode="layer">
-    <flowRoot
-       transform="matrix(1.3827799,0,0,2.3044767,-225.9701,-200.33118)"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4912)"
-       id="flowRoot4900"
-       xml:space="preserve"><flowRegion
-         id="flowRegion4902"><rect
-           y="54.33165"
-           x="558.22937"
-           height="322.57544"
-           width="990.90546"
-           id="rect4904" /></flowRegion><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:180px;font-family:FreeMono;-inkscape-font-specification:FreeMono;fill:#ffffff"
-         id="flowPara4906">Offline</flowPara></flowRoot>  </g>
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Online hover"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter10079)"
+       x="558.22852"
+       y="234.33203"
+       id="text5176"
+       sodipodi:linespacing="125%"
+       transform="matrix(1.3827799,0,0,2.3044767,-139.46993,-203.12133)"><tspan
+         sodipodi:role="line"
+         x="558.22852"
+         y="234.33203"
+         id="tspan5178"><tspan
+           x="558.22852"
+           y="234.33203"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:180px;font-family:FreeMono;-inkscape-font-specification:FreeMono;fill:#ffffff"
+           id="tspan5180">Online</tspan></tspan></text>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"

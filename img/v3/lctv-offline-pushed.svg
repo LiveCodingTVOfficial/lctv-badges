@@ -16,7 +16,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="lctv-offline.svg"
+   sodipodi:docname="lctv-offline-pushed.svg"
    enable-background="new">
   <defs
      id="defs4">
@@ -523,8 +523,10 @@
     </filter>
     <filter
        style="color-interpolation-filters:sRGB;"
-       inkscape:label="Edge Detect"
-       id="filter4983">
+       inkscape:label="In and Out"
+       id="filter4983"
+       inkscape:menu="Shadows and Glows"
+       inkscape:menu-tooltip="Inner colorized shadow, outer black shadow">
       <feConvolveMatrix
          in="SourceGraphic"
          kernelMatrix="0 1 0 1 -4 1 0 1 0"
@@ -534,13 +536,36 @@
          targetX="1"
          targetY="1"
          preserveAlpha="true"
-         result="convolve"
+         result="fbSourceGraphic"
          id="feConvolveMatrix4985" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4307" />
+      <feGaussianBlur
+         id="feGaussianBlur4309"
+         result="result0"
+         in="fbSourceGraphicAlpha"
+         stdDeviation="4" />
+      <feOffset
+         id="feOffset4311"
+         dx="5"
+         dy="5"
+         result="result4" />
+      <feComposite
+         in2="result4"
+         id="feComposite4313"
+         in="fbSourceGraphic"
+         operator="xor"
+         result="result3" />
     </filter>
     <filter
        style="color-interpolation-filters:sRGB;"
-       inkscape:label="Edge Detect"
-       id="filter4987">
+       inkscape:label="In and Out"
+       id="filter4987"
+       inkscape:menu="Shadows and Glows"
+       inkscape:menu-tooltip="Inner colorized shadow, outer black shadow">
       <feConvolveMatrix
          in="SourceGraphic"
          kernelMatrix="0 1 0 1 -4 1 0 1 0"
@@ -550,8 +575,29 @@
          targetX="1"
          targetY="1"
          preserveAlpha="true"
-         result="convolve"
+         result="fbSourceGraphic"
          id="feConvolveMatrix4989" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4479" />
+      <feGaussianBlur
+         id="feGaussianBlur4481"
+         result="result0"
+         in="fbSourceGraphicAlpha"
+         stdDeviation="4" />
+      <feOffset
+         id="feOffset4483"
+         dx="5"
+         dy="5"
+         result="result4" />
+      <feComposite
+         id="feComposite4485"
+         in2="result4"
+         in="fbSourceGraphic"
+         operator="xor"
+         result="result3" />
     </filter>
   </defs>
   <sodipodi:namedview
@@ -562,18 +608,18 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.51770834"
-     inkscape:cx="613.92973"
+     inkscape:cx="879.52329"
      inkscape:cy="231.42294"
      inkscape:document-units="px"
-     inkscape:current-layer="g4244"
+     inkscape:current-layer="g4301"
      showgrid="false"
      width="300mm"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1280"
-     inkscape:window-height="777"
+     inkscape:window-height="772"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="2"
      inkscape:window-maximized="1"
      inkscape:snap-global="true"
      inkscape:snap-bbox="true">
@@ -619,55 +665,58 @@
        sodipodi:nodetypes="scscscccs" />
   </g>
   <g
-     inkscape:groupmode="layer"
-     id="g4244"
-     inkscape:label="inner-red"
-     style="display:inline">
+     style="display:inline"
+     inkscape:label="inner-red-pushed"
+     id="g6266"
+     inkscape:groupmode="layer">
     <path
-       style="fill:#000000;fill-opacity:1"
+       sodipodi:nodetypes="scscscccs"
+       inkscape:connector-curvature="0"
+       id="path6268"
        d="m 1665.6604,212.71577 c 0.033,173.76866 -127.4033,173.92894 -127.4033,173.92894 0,0 -445.5017,-0.52166 -652.28892,-0.52166 -206.78721,0 -660.11319,0.47921 -660.11319,0.47921 0,0 -119.80389,1.45921 -119.57896,-173.88649 0.22292,-173.770329 105.1306,-173.097735 105.1306,-173.097735 l 674.56155,-0.309541 648.33112,0.131757 c 0,0 131.3276,0.517697 131.3611,173.275519 z"
-       id="path4246"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="scscscccs" />
+       style="fill:#000000;fill-opacity:1" />
     <path
-       transform="translate(-6.1035156e-5,0)"
-       inkscape:connector-curvature="0"
-       id="path4248"
+       style="fill:url(#radialGradient6576);fill-opacity:1"
        d="M 196.59195,379.6041 C 141.76981,360.51849 112.08824,309.68369 107.62097,227.22593 104.61325,171.70901 115.83976,119.68644 137.9676,86.602576 149.92657,68.722425 161.41386,58.538042 179.96668,49.367087 l 14.52024,-7.177582 338.13095,-1.24418 c 498.95253,-1.835936 1010.88863,-0.161379 1025.77683,3.355344 39.3047,9.284066 73.8003,39.628293 90.7029,79.787101 18.8946,44.89156 20.3103,121.30499 3.1627,170.70594 -8.5977,24.76919 -25.1661,49.13892 -43.1429,63.45688 -12.183,9.70344 -37.1644,21.71233 -51.3007,24.66097 -7.3613,1.53548 -197.7613,2.12782 -677.98788,2.10924 l -667.75201,-0.0258 -15.48486,-5.39086 z"
-       style="fill:url(#radialGradient6576);fill-opacity:1;filter:url(#filter4250)" />
-  </g>
-  <g
-     inkscape:label="logo"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-627.16536)"
-     style="display:inline">
-    <path
-       style="fill:#ffffff;fill-opacity:1;filter:url(#filter4987)"
-       d="m 204.84294,716.76609 c -7.34423,0.0159 -7.46648,6.68172 -7.46648,6.68172 0.0734,62.98656 -0.67721,130.9006 -0.25418,193.86655 0,0 0.45329,8.01682 6.64169,8.16809 l 97.84318,0 c -7.22032,12.23505 -13.95873,25.17044 -24.32762,35.45327 -2.11749,4.5477 -2.85019,9.5031 -3.69147,14.34264 50.41255,-0.004 100.8251,-0.01 151.23764,-0.0175 -1.19255,-5.98906 -2.16544,-9.50981 -3.37023,-15.13702 -8.15734,-8.9866 -22.42159,-34.39817 -22.42159,-34.39817 l 112.92754,-0.39792 c 8.13827,-0.49057 8.29877,-7.33723 8.29877,-7.33723 l -0.0352,-193.69133 c 0,0 4.9e-4,-7.36885 -7.06092,-7.39397 z m 299.89731,14.26408 0.67719,179.06989 -293.80259,0.0654 c 0,0 0.5988,-127.98415 0.81597,-179.28823 0,0 209.80551,1.16841 292.30943,0.15295 z m -127.97723,12.01547 -61.16251,150.91203 22.21849,-0.14843 c 20.92735,-50.37608 39.37958,-100.4259 60.19227,-150.84934 z m 20.26824,52.82821 c 0,0 39.98442,15.59451 56.66094,23.93646 -16.86117,7.31723 -39.92938,15.7584 -56.83217,22.99739 -0.0359,8.35335 0.10415,13.49491 -10e-4,21.84783 28.40846,-12.22395 55.99055,-22.42004 84.41546,-34.61273 l -0.58912,-19.38 -83.68107,-36.18201 z m -164.48553,14.93068 0.3744,18.8351 81.33019,35.13029 c 0.0452,-7.92049 -0.0789,-14.31148 -0.0337,-22.23198 0,0 -35.43496,-14.77997 -51.26003,-22.06297 15.84975,-7.56633 51.55716,-23.927 51.55716,-23.927 0.19186,-8.0647 0.16198,-21.38521 0.16198,-21.38521 0,0 -69.14152,29.9571 -82.12998,35.64177 z m 147.43238,114.7304 c 0,0 8.22531,23.46983 12.07762,35.27654 -27.31147,0.22642 -54.6243,0.15215 -81.93652,0.16448 4.14942,-11.81729 12.44948,-35.45151 12.44948,-35.45151 z"
-       id="path6233"
+       id="path6276"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccc" />
+       transform="translate(-6.1035156e-5,0)" />
   </g>
   <g
+     style="display:inline"
+     transform="translate(0,-627.16536)"
+     id="g4281"
      inkscape:groupmode="layer"
-     id="layer4"
-     inkscape:label="Offline"
-     style="display:inline;opacity:1">
-    <flowRoot
+     inkscape:label="logo pushed">
+    <path
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccc"
+       inkscape:connector-curvature="0"
+       id="path4283"
+       d="m 204.84294,716.76609 c -7.34423,0.0159 -7.46648,6.68172 -7.46648,6.68172 0.0734,62.98656 -0.67721,130.9006 -0.25418,193.86655 0,0 0.45329,8.01682 6.64169,8.16809 l 97.84318,0 c -7.22032,12.23505 -13.95873,25.17044 -24.32762,35.45327 -2.11749,4.5477 -2.85019,9.5031 -3.69147,14.34264 50.41255,-0.004 100.8251,-0.01 151.23764,-0.0175 -1.19255,-5.98906 -2.16544,-9.50981 -3.37023,-15.13702 -8.15734,-8.9866 -22.42159,-34.39817 -22.42159,-34.39817 l 112.92754,-0.39792 c 8.13827,-0.49057 8.29877,-7.33723 8.29877,-7.33723 l -0.0352,-193.69133 c 0,0 4.9e-4,-7.36885 -7.06092,-7.39397 z m 299.89731,14.26408 0.67719,179.06989 -293.80259,0.0654 c 0,0 0.5988,-127.98415 0.81597,-179.28823 0,0 209.80551,1.16841 292.30943,0.15295 z m -127.97723,12.01547 -61.16251,150.91203 22.21849,-0.14843 c 20.92735,-50.37608 39.37958,-100.4259 60.19227,-150.84934 z m 20.26824,52.82821 c 0,0 39.98442,15.59451 56.66094,23.93646 -16.86117,7.31723 -39.92938,15.7584 -56.83217,22.99739 -0.0359,8.35335 0.10415,13.49491 -10e-4,21.84783 28.40846,-12.22395 55.99055,-22.42004 84.41546,-34.61273 l -0.58912,-19.38 -83.68107,-36.18201 z m -164.48553,14.93068 0.3744,18.8351 81.33019,35.13029 c 0.0452,-7.92049 -0.0789,-14.31148 -0.0337,-22.23198 0,0 -35.43496,-14.77997 -51.26003,-22.06297 15.84975,-7.56633 51.55716,-23.927 51.55716,-23.927 0.19186,-8.0647 0.16198,-21.38521 0.16198,-21.38521 0,0 -69.14152,29.9571 -82.12998,35.64177 z m 147.43238,114.7304 c 0,0 8.22531,23.46983 12.07762,35.27654 -27.31147,0.22642 -54.6243,0.15215 -81.93652,0.16448 4.14942,-11.81729 12.44948,-35.45151 12.44948,-35.45151 z"
+       style="fill:#ffffff;fill-opacity:1;filter:url(#filter4987)" />
+  </g>
+  <g
+     style="display:inline;opacity:1"
+     inkscape:label="Offline pushed"
+     id="g4301"
+     inkscape:groupmode="layer">
+    <text
        xml:space="preserve"
-       id="flowRoot6604"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4983)"
-       transform="matrix(1.3827799,0,0,2.3044767,-225.9701,-200.33118)"><flowRegion
-         id="flowRegion6606"><rect
-           id="rect6608"
-           width="990.90546"
-           height="322.57544"
-           x="558.22937"
-           y="54.33165"
-           style="" /></flowRegion><flowPara
-         id="flowPara6610"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:180px;font-family:FreeMono;-inkscape-font-specification:FreeMono;fill:#ffffff">Offline</flowPara></flowRoot>  </g>
+       x="558.22852"
+       y="234.33203"
+       id="text4598"
+       sodipodi:linespacing="125%"
+       transform="matrix(1.3827799,0,0,2.3044767,-225.9701,-200.33118)"><tspan
+         sodipodi:role="line"
+         x="558.22852"
+         y="234.33203"
+         id="tspan4600"><tspan
+           x="558.22852"
+           y="234.33203"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:180px;font-family:FreeMono;-inkscape-font-specification:FreeMono;fill:#ffffff"
+           id="tspan4602">Offline</tspan></tspan></text>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"

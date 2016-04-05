@@ -1,8 +1,8 @@
 <?php
 
-require('../api/LctvApi.inc') ;
-require('../img/v1//lctv-badges-svg-v1.php') ;
-require('LctvBadgeConstants.inc') ;
+require(__DIR__ . '/LctvBadgeConstants.inc') ;
+require(__DIR__ . '/../api/LctvApi.inc') ;
+require(__DIR__ . '/../img/v1//lctv-badges-svg-v1.inc') ;
 
 
 abstract class LctvBadge
@@ -151,6 +151,8 @@ abstract class LctvBadge
     // make RESTful request
     $this->api_request = $this->lctv_api->api_request($this->api_endpoint) ;
 
+// if (isset($this->api_request->result->detail)) echo "fetchData() error=" . $this->api_request->result->detail ;
+
     // return API error status
     return $this->api_request !== false && !isset($this->api_request->result->detail) ;
   }
@@ -201,25 +203,14 @@ class LctvBadgeStatus extends LctvBadge
 
     $is_online = $this->api_request->result->is_live ;
 
-    if      ($this->badge_style == STATUS_V2_STYLE)
-    {
-      header("Location: " . (($is_online) ? V2_ONLINE_PNG : V2_OFFLINE_PNG)) ;
-    }
-    else if ($this->badge_style == STATUS_V3_STYLE)
-    {
-      header("Content-type:image/svg+xml") ;
-      echo file_get_contents(($is_online) ? V3_ONLINE_PNG : V3_OFFLINE_PNG) ;
-    }
-    else if ($this->badge_style == STATUS_V3_HOVER_STYLE)
-    {
-      header("Content-type:image/svg+xml") ;
-      echo file_get_contents(($is_online) ? V3_ONLINE_HOVER_PNG : V3_OFFLINE_HOVER_PNG) ;
-    }
+    if      ($this->badge_style == STATUS_V2_STYLE       )
+      header("Location: " . (($is_online) ? V2_ONLINE_PNG        : V2_OFFLINE_PNG       )) ;
+    else if ($this->badge_style == STATUS_V3_STYLE       )
+      header("Location: " . (($is_online) ? V3_ONLINE_PNG        : V3_OFFLINE_PNG       )) ;
+    else if ($this->badge_style == STATUS_V3_HOVER_STYLE )
+      header("Location: " . (($is_online) ? V3_ONLINE_HOVER_PNG  : V3_OFFLINE_HOVER_PNG )) ;
     else if ($this->badge_style == STATUS_V3_PUSHED_STYLE)
-    {
-      header("Content-type:image/svg+xml") ;
-      echo file_get_contents(($is_online) ? V3_ONLINE_PUSHED_PNG : V3_OFFLINE_PUSHED_PNG) ;
-    }
+      header("Location: " . (($is_online) ? V3_ONLINE_PUSHED_PNG : V3_OFFLINE_PUSHED_PNG)) ;
     else /* if ($this->badge_style == STATUS_V1_STYLE) */
     {
       // display live stream title as $online_text

@@ -1,10 +1,13 @@
 <?php
 
-define('PATH_FROM_ROOT' , '' /* if badges are not served from web root */ ) ;
-define('BADGES_ROOT'    , $_SERVER['HTTP_HOST']   . PATH_FROM_ROOT        ) ;
-define('BADGES_URL'     , 'http://' . BADGES_ROOT . '/badges'             ) ;
-define('BADGE_JS_URL'   , 'http://' . BADGES_ROOT . '/js/online-status.js') ;
-define('LCTV_URL'       , 'https://www.livecoding.tv'                     ) ;
+// NOTE: many of these must be mirrored in badges/lctv-badges.js
+
+// urls
+define('PATH_FROM_WWW_ROOT' , '' /* if not served from web root */                  ) ;
+define('LCTV_URL'           , 'https://www.livecoding.tv/'                          ) ;
+define('BADGES_URL'         , 'http://' . $_SERVER['HTTP_HOST'] . PATH_FROM_WWW_ROOT) ;
+define('BADGES_PHP_URL'     , BADGES_URL . '/badges/'                               ) ;
+define('BADGES_JS_URL'      , BADGES_URL . '/badges/lctv-badges.js'                 ) ;
 
 // request param keys
 define('CHANNEL_KEY' , 'channel') ;
@@ -18,22 +21,31 @@ define('LINK_KEY'    , 'link'   ) ;
 define('STATUS_V1_STYLE'        , 'online-status-v1'       ) ;
 define('STATUS_V2_STYLE'        , 'online-status-v2'       ) ;
 define('STATUS_V3_STYLE'        , 'online-status-v3'       ) ;
-define('STATUS_V3_HOVER_STYLE'  , 'online-status-hover-v3' ) ;
-define('STATUS_V3_PUSHED_STYLE' , 'online-status-pushed-v3') ;
+define('STATUS_V3_HOVER_STYLE'  , 'online-status-v3-hover' ) ;
+define('STATUS_V3_PUSHED_STYLE' , 'online-status-v3-pushed') ;
 define('VIEWERS_V1_STYLE'       , 'n-viewers-v1'           ) ;
 define('FOLLOWERS_V1_STYLE'     , 'n-followers-v1'         ) ;
 define('LASTSTREAM_V1_STYLE'    , 'last-stream-v1'         ) ;
 define('NEXTSTREAM_V1_STYLE'    , 'next-stream-v1'         ) ;
+$BADGE_V1_STYLES   = array( STATUS_V1_STYLE     , VIEWERS_V1_STYLE    ,
+                            FOLLOWERS_V1_STYLE  , LASTSTREAM_V1_STYLE ,
+                            NEXTSTREAM_V1_STYLE                       ) ;
+$BADGE_V2_STYLES   = array( STATUS_V2_STYLE ) ;
+$BADGE_V3_STYLES   = array( STATUS_V3_STYLE        , STATUS_V3_HOVER_STYLE ,
+                            STATUS_V3_PUSHED_STYLE                         ) ;
+$BADGE_PVT_STYLES  = array( FOLLOWERS_V1_STYLE , LASTSTREAM_V1_STYLE ) ;
+$BADGE_FLIP_STYLES = array( STATUS_V3_STYLE ) ;
 
-$BADGE_V1_STYLES = array( STATUS_V1_STYLE     , VIEWERS_V1_STYLE    ,
-                          FOLLOWERS_V1_STYLE  , LASTSTREAM_V1_STYLE ,
-                          NEXTSTREAM_V1_STYLE                       ) ;
-$PRIVATE_STYLES  = array( FOLLOWERS_V1_STYLE , LASTSTREAM_V1_STYLE ) ;
-$BADGE_V2_STYLES = array( STATUS_V2_STYLE ) ;
-$BADGE_V3_STYLES = array( STATUS_V3_STYLE        , STATUS_V3_HOVER_STYLE ,
-                          STATUS_V3_PUSHED_STYLE                         ) ;
+// badge image HTML ids
+$BADGE_IMG_IDS = array( STATUS_V1_STYLE     => 'lctv-status-img'     ,
+                        STATUS_V2_STYLE     => 'lctv-status-img'     ,
+                        STATUS_V3_STYLE     => 'lctv-status-img'     ,
+                        VIEWERS_V1_STYLE    => 'lctv-viewers-img'    ,
+                        FOLLOWERS_V1_STYLE  => 'lctv-followers-img'  ,
+                        LASTSTREAM_V1_STYLE => 'lctv-laststream-img' ,
+                        NEXTSTREAM_V1_STYLE => 'lctv-nextstream-img' ) ;
 
-// image files
+// badge image files
 define('V2_ONLINE_PNG'         , '../img/v2/lctv-online.png'        ) ;
 define('V2_OFFLINE_PNG'        , '../img/v2/lctv-offline.png'       ) ;
 define('V3_ONLINE_PNG'         , '../img/v3/lctv-online.png'        ) ;
@@ -57,7 +69,7 @@ define('LASTSTREAM_LTEXT'    , 'LCTV Last Stream') ;
 define('NEXTSTREAM_LTEXT'    , 'LCTV Next Stream') ;
 
 // error messages
-define('INVALID_CHANNEL_MSG', 'You must specify a channel name like: '       .
-                              BADGES_URL . '?channel=YOUR_LCTV_CHANNEL_NAME.') ;
+define('INVALID_CHANNEL_MSG', 'You must specify a channel name like: '           .
+                              BADGES_PHP_URL . '?channel=YOUR_LCTV_CHANNEL_NAME.') ;
 
 ?>

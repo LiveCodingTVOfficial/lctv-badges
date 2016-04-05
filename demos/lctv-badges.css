@@ -1,0 +1,44 @@
+body { background-color: #111 ; color: #fff ; }
+
+#demos-table th { height: 42px ; vertical-align: bottom ; }
+#demos-table td { padding: 5px 15px 5px 15px ; }
+
+#options-table { margin-bottom: 42px ; }
+
+#code-div span { margin-bottom: 15px ; }
+#code-div pre  { background-color: #000 ; color: #fff ; border: 1px solid #fff ;
+                 padding: 15px ; display: table ; }
+
+#notes-table td { padding-left: 24px ; }
+
+#options-table ,
+#code-div span ,
+#code-div pre  ,
+#notes-table     { margin-left: 15px ; }
+
+input[type=button]
+{
+  border-top: 1px solid #00ff00;
+  background: #005c00;
+  background: -webkit-gradient(linear, left top, left bottom, from(#008000), to(#005c00));
+  background: -webkit-linear-gradient(top, #008000, #005c00);
+  background: -moz-linear-gradient(top, #008000, #005c00);
+  background: -ms-linear-gradient(top, #008000, #005c00);
+  background: -o-linear-gradient(top, #008000, #005c00);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #bfbfbf;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
+input[type=button]:hover { border-top-color: #00c000; background: #00c000; color: #ffffff; }
+input[type=button]:active { border-top-color: #005c00; background: #005c00; }
+
+#options-table img { position: relative ; top: 2px ; }

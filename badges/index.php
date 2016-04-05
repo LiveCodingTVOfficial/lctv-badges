@@ -1,6 +1,6 @@
 <?php
 
-require('LctvBadge.inc') ;
+require_once('LctvBadge.inc') ;
 require_once('../api/LctvApiHelpers.inc') ;
 
 
@@ -10,17 +10,17 @@ define('USE_TITLE'    , LctvApiHelpers::SanitizeGetParam('title'   , 'false') ==
 define('WRAP_LINK'    , LctvApiHelpers::SanitizeGetParam('link'    , true              )) ;
 define('ONLINE_TEXT'  , LctvApiHelpers::SanitizeGetParam('online'  , 'LIVE'            )) ;
 define('OFFLINE_TEXT' , LctvApiHelpers::SanitizeGetParam('offline' , 'offline'         )) ;
-define('LINK_URL'     , ((WRAP_LINK) ? LCTV_URL . '/' . CHANNEL_NAME . '/' : '')        ) ;
 
-define('IS_V1_STYLE'            , in_array(BADGE_STYLE , $BADGE_V1_STYLES)) ;
-define('IS_V2_STYLE'            , in_array(BADGE_STYLE , $BADGE_V2_STYLES)) ;
-define('IS_V3_STYLE'            , in_array(BADGE_STYLE , $BADGE_V3_STYLES)) ;
-define('IS_PRIVATE_STYLE'       , in_array(BADGE_STYLE , $PRIVATE_STYLES )) ;
+define('IS_V1_STYLE'            , in_array(BADGE_STYLE , $BADGE_V1_STYLES )) ;
+define('IS_V2_STYLE'            , in_array(BADGE_STYLE , $BADGE_V2_STYLES )) ;
+define('IS_V3_STYLE'            , in_array(BADGE_STYLE , $BADGE_V3_STYLES )) ;
+define('IS_PRIVATE_STYLE'       , in_array(BADGE_STYLE , $BADGE_PVT_STYLES)) ;
 define('IS_STATUS_V1_STYLE'     , BADGE_STYLE == STATUS_V1_STYLE    ) ;
 define('IS_VIEWERS_V1_STYLE'    , BADGE_STYLE == VIEWERS_V1_STYLE   ) ;
 define('IS_FOLLOWERS_V1_STYLE'  , BADGE_STYLE == FOLLOWERS_V1_STYLE ) ;
 define('IS_LASTSTREAM_V1_STYLE' , BADGE_STYLE == LASTSTREAM_V1_STYLE) ;
 define('IS_NEXTSTREAM_V1_STYLE' , BADGE_STYLE == NEXTSTREAM_V1_STYLE) ;
+define('LINK_URL'               , ((WRAP_LINK) ? LCTV_URL . CHANNEL_NAME . '/' : '')) ;
 
 
 // instantiate the badge status fetcher

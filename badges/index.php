@@ -1,4 +1,14 @@
 <?php
+/**
+ * LiveEdu.tv Badges
+ *
+ * HTML badges and link buttons for liveedu.tv online status and stream stats
+ *
+ * @package LctvBadges\LctvBadges
+ * @version 0.0.9
+ * @since 0.0.8
+ */
+
 
 require_once('LctvBadge.inc') ;
 require_once('../api/LctvApiHelpers.inc') ;

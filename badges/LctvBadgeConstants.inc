@@ -1,10 +1,18 @@
 <?php
+/**
+ * LiveEdu.tv Badges Constants
+ *
+ * @package LctvBadges\Constants
+ * @version 0.0.9
+ * @since 0.0.8
+ */
+
 
 // NOTE: many of these must be mirrored in badges/lctv-badges.js
 
 // urls
 define('PATH_FROM_WWW_ROOT' , '' /* if not served from web root */                  ) ;
-define('LCTV_URL'           , 'https://www.livecoding.tv/'                          ) ;
+define('LCTV_URL'           , 'https://www.liveedu.tv/'                             ) ;
 define('BADGES_URL'         , 'http://' . $_SERVER['HTTP_HOST'] . PATH_FROM_WWW_ROOT) ;
 define('BADGES_PHP_URL'     , BADGES_URL . '/badges/'                               ) ;
 define('BADGES_JS_URL'      , BADGES_URL . '/badges/lctv-badges.js'                 ) ;
@@ -62,11 +70,11 @@ define('UNAUTHORIZED_R_TEXT' , 'Unauthorized'    ) ;
 define('ERROR_R_TEXT'        , 'Error'           ) ;
 define('NO_NEXT_STREAM_TEXT' , 'None'            ) ;
 define('NO_LAST_STREAM_TEXT' , 'Never'           ) ;
-define('STATUS_LTEXT'        , 'LiveCoding.tv'   ) ;
-define('VIEWERS_LTEXT'       , 'LCTV Viewers'    ) ;
-define('FOLLOWERS_LTEXT'     , 'LCTV Fans'       ) ;
-define('LASTSTREAM_LTEXT'    , 'LCTV Last Stream') ;
-define('NEXTSTREAM_LTEXT'    , 'LCTV Next Stream') ;
+define('STATUS_LTEXT'        , 'LiveEdu.tv'            ) ;
+define('VIEWERS_LTEXT'       , 'LiveEdu.tv Viewers'    ) ;
+define('FOLLOWERS_LTEXT'     , 'LiveEdu.tv Fans'       ) ;
+define('LASTSTREAM_LTEXT'    , 'LiveEdu.tv Last Stream') ;
+define('NEXTSTREAM_LTEXT'    , 'LiveEdu.tv Next Stream') ;
 
 // error messages
 define('INVALID_CHANNEL_MSG', 'You must specify a channel name like: '           .

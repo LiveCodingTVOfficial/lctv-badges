@@ -1,10 +1,12 @@
 <?php
 /**
- * Create svg badges.
+ * LiveEdu.tv Badges Custom SVG Pill Generator
  *
- * @package LCTVBadges\BadgesSVG
- * @since 0.0.3
+ * @package LctvBadges\Images
+ * @version 0.0.9
+ * @since 0.0.1
  */
+
 
 /** Check if script is accessed directly. */
 if ( basename( __FILE__ ) == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {

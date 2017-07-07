@@ -1,4 +1,12 @@
 <?php
+/**
+ * LiveEdu.tv Badges Embed Code Generator
+ *
+ * @package LctvBadges\Demos
+ * @version 0.0.9
+ * @since 0.0.8
+ */
+
 
 require_once('../api/LctvApiHelpers.inc') ;
 require_once('../badges/LctvBadgeConstants.inc') ;
@@ -215,8 +223,8 @@ function makeBadgeUrl()
   var channel_name = getChannelName() ;
   var wrap_link    = LinkInput.checked ;
   var use_title    = TitleInput.checked ;
-  var online_text  = OnlineInput.value ;
-  var offline_text = OfflineInput.value ;
+  var online_text  = escape(OnlineInput.value) ;
+  var offline_text = escape(OfflineInput.value) ;
 
   OnlineInput.style.disabled = use_title ;
 

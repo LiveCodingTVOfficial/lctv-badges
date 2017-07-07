@@ -9,7 +9,7 @@
 var BADGES_ROOT_URL        = "https://codiad-billauger.rhcloud.com" ;
 var BADGES_IMG_URL         = BADGES_ROOT_URL + '/img/' ;
 var BADGES_PHP_URL         = BADGES_ROOT_URL + '/badges/' ;
-var LCTV_URL               = "https://www.livecoding.tv/" ;
+var LCTV_URL               = "https://www.liveedu.tv/" ;
 var CHANNEL_KEY            = 'channel' ;
 var STYLE_KEY              = 'style' ;
 var STATUS_V3_STYLE        = 'online-status-v3' ;

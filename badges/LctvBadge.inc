@@ -1,4 +1,13 @@
 <?php
+/**
+ * LiveEdu.tv Badges
+ *
+ * HTML badges and link buttons for liveedu.tv online status and stream stats
+ *
+ * @package LctvBadges\LctvBadges
+ * @version 0.0.9
+ * @since 0.0.8
+ */
 
 require(__DIR__ . '/LctvBadgeConstants.inc') ;
 require(__DIR__ . '/../api/LctvApi.inc') ;
@@ -44,7 +53,7 @@ abstract class LctvBadge
   protected $api_endpoint = '' ;
 
   /**
-    * livecoding.tv user with which to authenticate for API request. (user-supplied)
+    * liveedu.tv user with which to authenticate for API request. (user-supplied)
     *
     * @since 0.0.8
     * @access protected
@@ -116,7 +125,7 @@ abstract class LctvBadge
     * @since 0.0.8
     *
     * @param array $params - user supplied badge styling parameters set to instance vars.
-    *                   ->auth_user:    (Optional) livecoding.tv user with which to authenticate for API request.
+    *                   ->auth_user:    (Optional) liveedu.tv user with which to authenticate for API request.
     *                   ->badge_style:  (Optional) Badge style to return.
     *                   ->channel_name: (Required) Name of channel for which to fetch data.
     *                   ->link_url:     (Optional) true/false to wrap image in hyperlink to channel.
@@ -141,7 +150,7 @@ abstract class LctvBadge
   }
 
   /**
-  * Send per-subclass request to the livecoding.tv API.
+  * Send per-subclass request to the liveedu.tv API.
   *
   * @since 0.0.8
   * @access protected
